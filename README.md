@@ -1,6 +1,6 @@
-### React template
+### React ModX app
 
-This is a template to build a scalable react web application using:
+This is a simple app for understanding MobX:
 * React
 * Express
 * Webpack
@@ -9,11 +9,12 @@ This is a template to build a scalable react web application using:
 * Jest
 * Enzyme
 * Flow
+* MobX
 
 ### Fast start
 ```sh
 # Clone the repository
-$ git clone https://github.com/njiyto/react_template
+$ git clone https://github.com/njiyto/react-mobx.git
 
 # Install dependencies
 $ npm install
@@ -42,6 +43,3 @@ $ git config user.email 'example@mail'
 $ git remote -v
 $ git remote set-url
 ```
-
-### TODO
-* redux thunk
