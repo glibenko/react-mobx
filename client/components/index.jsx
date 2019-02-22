@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import moduleName from 'module';
 
 // check css modules
 import styles from './index.css';
@@ -25,7 +26,7 @@ export default class App extends Component<Props, State> {
         role="button"
         tabIndex="0"
       >
-        hey
+        <Todo />
       </div>
     );
   }
