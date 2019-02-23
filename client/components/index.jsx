@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import moduleName from 'module';
+import Todo from './Todo';
 
 // check css modules
 import styles from './index.css';
