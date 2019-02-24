@@ -11,7 +11,7 @@ export default class AddNote extends Component {
 
   @action
   handleFormSubmit = (e) => {
-    this.props.store.addTodo(this.state.value);
+    this.props.store.add(this.state.value);
     this.setState({ value: '' });
     e.preventDefault();
   };
