@@ -17,11 +17,13 @@ export default class List extends Component {
   };
 
   render() {
+
+    console.log('this.props.store.todos', this.props.store.todos);
     return (
       <div>
         {this.props.store.todos.map(el => (
           <div key={el.id} style={{ display: 'flex'}}>
-          <div onClick={() => {this.completed(el.id)}}> {el.title} </div>
+          <div onClick={() => {this.completed(el.id)}} style={el.completed ? {color: 'red'} : null}> {el.title} </div>
           <div onClick={() => {this.remove(el.id)} }>del</div>
           </div>
         ))}

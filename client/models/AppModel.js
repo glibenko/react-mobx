@@ -30,10 +30,7 @@ export default class AppModel {
 
   @action
   completed(id) {
-    const todos = this.todos.filter(el => el.id !== id);
-    let todo = this.todos.find(el => el.id === id);
+    const todo = this.todos.find(el => el.id === id);
     todo.completed = !todo.completed;
-    todos.push(todo);
-    this.todos = todos;
   }
 }
