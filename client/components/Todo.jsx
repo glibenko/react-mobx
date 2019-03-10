@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AddNote from './AddNote';
 import List from './List';
 
-
-export default class Todo extends Component {
-  render() {
-    return (
-      <div>
-        <AddNote />
-        <List />
-      </div>
-    )
-  }
+function Todo() {
+  return (
+    <div>
+      <AddNote />
+      <List />
+    </div>
+  );
 }
+
+export default React.memo(Todo);

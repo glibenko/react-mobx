@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { observable, action } from 'mobx';
+import { action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 
 @inject('store')
@@ -18,7 +18,12 @@ export default class AddNote extends Component {
 
   render() {
     const { value } = this.state;
-    console.log('this.props', this.props)
+
+    const styleInput = {
+      border: '1px solid #ccc',
+      marginRight: 10,
+      borderRadius: 4,
+    };
 
     return (
       <div>
@@ -26,6 +31,7 @@ export default class AddNote extends Component {
           value={value}
           type="text"
           onChange={(e) => { this.setState({ value: e.target.value }); }}
+          style={styleInput}
         />
         <button onClick={this.handleFormSubmit}>ADD</button>
       </div>

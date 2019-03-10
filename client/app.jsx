@@ -7,15 +7,6 @@ import AppModel from './models/AppModel';
 
 const store = new AppModel();
 
-// const MobxApp = (
-//   <>
-//     <DevTools />
-//     <App store={store} />
-//   </>
-// );
-
-console.log('store', store, store.todos);
-
 ReactDOM.render(
   <>
     <DevTools />

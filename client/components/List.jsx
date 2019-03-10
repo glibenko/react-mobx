@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { observable, action } from 'mobx';
+import { action } from 'mobx';
 
 @inject('store')
 @observer
 export default class List extends Component {
-
   @action
   remove = (id) => {
     this.props.store.remove(id);
   };
 
-  @action
   completed = (id) => {
     this.props.store.completed(id);
   };
 
   render() {
+    const {store: {todos, todoCount, unfinishedTodoCount}} = this.props;
 
-    console.log('this.props.store.todos', this.props.store.todos);
+    const styleContainer = {
+      width: 180,
+    };
+
+    const styleList = {
+      marginTop: 10,
+    };
+
+    const styleItem = {
+      display: 'flex',
+      justifyContent: 'space-between',
+    };
+
     return (
-      <div>
-        {this.props.store.todos.map(el => (
-          <div key={el.id} style={{ display: 'flex'}}>
-          <div onClick={() => {this.completed(el.id)}} style={el.completed ? {color: 'red'} : null}> {el.title} </div>
-          <div onClick={() => {this.remove(el.id)} }>del</div>
-          </div>
-        ))}
+      <div style={styleContainer}>
+        <div style={styleList}>
+          {todos.map((el) => {
+            const completed = el.completed ? { color: 'red', cursor: 'pointer' } : { cursor: 'pointer' };
+            return (
+              <div key={el.id} style={styleItem}>
+                <div onClick={() => {this.completed(el.id)}} style={completed}> {el.title} </div>
+                <div onClick={() => {this.remove(el.id)} }>del</div>
+              </div>
+            );
+          })}
+        </div>
+        <div style={styleList}> Count: {todoCount} </div>
+        <div> unfinished: {unfinishedTodoCount} </div>
       </div>
-    )
+    );
   }
 }
