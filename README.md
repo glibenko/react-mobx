@@ -1,4 +1,4 @@
-### React ModX app
+### React MobX app
 
 This is a simple app for understanding MobX:
 * React
