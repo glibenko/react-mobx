@@ -62,7 +62,7 @@
     "mobx-react-devtools": "^6.0.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   }
